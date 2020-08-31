@@ -1,0 +1,7 @@
+{
+  "name": "comics-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
