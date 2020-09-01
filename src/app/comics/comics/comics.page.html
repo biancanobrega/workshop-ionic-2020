@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Comics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-searchbar [formControl]="filterControl" color="secondary"></ion-searchbar>
+  <ion-list>
+    <ion-item color="secondary" *ngFor="let comic of filteredComics$ | async" [routerLink]="['comic', comic.id]">
+      <ion-avatar>
+        <img src={{comic.image}}>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{comic.name}}</h2>
+        <p>{{comic.releaseDate | date: 'MMM d, y'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary" routerLink="/comics/form">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+
+  </ion-fab>
+
+</ion-content>

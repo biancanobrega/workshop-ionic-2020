@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="comics"></ion-back-button>
+    </ion-buttons>
+    <ion-title>comic-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <form [formGroup]="comicForm" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-input formControlName="image" type="text" placeholder="Image url"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-input formControlName="name" type="text" placeholder="Comic name"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <ion-datetime formControlName="releaseDate" displayFormat="YYYY-MM-DD" ></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-textarea autoGrow=true formControlName="description" placeholder="Description"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="teste">
+        <ion-col>
+          <ion-button type="submit" [disabled]="comicForm?.invalid" color="tertiary" expand="block">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="comics"></ion-back-button>
+    </ion-buttons>
+    <ion-title>comic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-img src={{comic?.image}}></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2>
+          {{comic?.name}}
+        </h2>
+        <p>{{comic?.releaseDate | date: 'MMM d, y'}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>{{comic?.description}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button [routerLink]="['/comics/form', comic?.id]" color="tertiary" expand="block">Update</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="removeComic()" color="tertiary" expand="block">Remove</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-content color="primary">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-img src="/assets/logo.png"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-input formControlName="pass" type="password" placeholder="Password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="tertiary" [disabled]="loginForm?.invalid" expand="block">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
+
